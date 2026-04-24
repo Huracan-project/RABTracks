@@ -1,1 +1,8 @@
 .ipynb_checkpoints
+0_*.ipynb
+2_build_extended-ibtracs-individual.ipynb
+_archive
+raw_data
+memo.txt
+__pycache__/
+analysis
