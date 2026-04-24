@@ -1,6 +1,6 @@
 # Extended IBTrACS
 
-Author: Stella Bourdin (Uni. Oxford), with help from Leo Saffin and Kevin Hodges (Uni. Reading), and advice from many members of the [Huracán project](https://research.reading.ac.uk/huracan/about-huracan/project-overview/).
+Author: Stella Bourdin (Uni. Oxford), with help from Leo Saffin and Kevin Hodges (Uni. Reading), and Yushan Han (UCDavis), and advice from many members of the [Huracán project](https://research.reading.ac.uk/huracan/about-huracan/project-overview/).
 
 This code and data are distributed under the GPL-3.0 license. This does not cover the IBTrACs data, whose license is not indicated on the website. 
 
