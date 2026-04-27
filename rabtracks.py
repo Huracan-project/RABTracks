@@ -37,6 +37,82 @@ SOURCES = ['IBTrACS',
 def clean(masked, dim = "record"):
     return masked.dropna(dim=dim, how="all")
 
+def save_xarray_to_pickle(obj, path, compress = True):
+    """
+    Save an xarray Dataset/DataArray to a pickle file in a way that's portable:
+    - Materialize all data into memory (no lazy netCDF/dask-backed arrays)
+    - Detach from any file handles
+    - Remove filesystem path hints like encoding["source"]
+    - Verify materialization by forcing numpy conversion of all variables
+
+    Parameters
+    ----------
+    obj : xarray.Dataset or xarray.DataArray
+        The xarray object to save.
+    path : str or pathlib.Path
+        Output pickle path.
+    """
+    if not isinstance(obj, (xr.Dataset, xr.DataArray)):
+        raise TypeError(f"obj must be an xarray Dataset or DataArray, got {type(obj)!r}")
+
+    # Work on a detached copy (avoid mutating caller's object)
+    # deep=True ensures we own the arrays once loaded.
+    obj2 = obj.copy(deep=True)
+
+    # Materialize data (handles both netCDF-backed and (most) dask-backed cases)
+    # - .load() is xarray-native and will compute dask if present.
+    obj2 = obj2.load()
+
+    # Close any open file handles (safe no-op if nothing open)
+    try:
+        obj2.close()
+    except Exception:
+        pass
+
+    # Strip path-ish encodings that can leak local filesystem info
+    def _strip_encodings(ds):
+        if hasattr(ds, "encoding") and isinstance(ds.encoding, dict):
+            ds.encoding.pop("source", None)
+            ds.encoding.pop("original_shape", None)
+
+        # Dataset has .variables; DataArray does not in the same way
+        if isinstance(ds, xr.Dataset):
+            for v in ds.variables:
+                enc = getattr(ds[v], "encoding", None)
+                if isinstance(enc, dict):
+                    enc.pop("source", None)
+                    enc.pop("original_shape", None)
+
+    if isinstance(obj2, xr.Dataset):
+        _strip_encodings(obj2)
+    else:  # DataArray
+        _strip_encodings(obj2)
+        # Also strip the underlying Variable encoding if present
+        try:
+            if isinstance(obj2.variable.encoding, dict):
+                obj2.variable.encoding.pop("source", None)
+                obj2.variable.encoding.pop("original_shape", None)
+        except Exception:
+            pass
+
+    # Verify: force actual data access; if anything is still lazy, this is where it breaks.
+    if isinstance(obj2, xr.Dataset):
+        for name, var in obj2.variables.items():
+            _ = np.asarray(var.data)
+        # Stronger forcing option (can be expensive); uncomment if desired:
+        # _ = obj2.to_dataframe()
+    else:
+        _ = np.asarray(obj2.data)
+
+    # Write pickle
+    with open(path, "wb") as f:
+        pkl.dump(obj2, f,)
+
+    if compress:
+        with lzma.open(path+".xz", "wb") as f:
+            pkl.dump(obj2, f)
+    
+
 # Plot parameters
 
 cmap = sns.color_palette("tab20").as_hex()
