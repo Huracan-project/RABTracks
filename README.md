@@ -1,4 +1,7 @@
-# Extended IBTrACS
+# RABTracks
+
+> [!WARNING]
+> **WORK IN PROGRESS:** This repository is under active development. Data and instructions to download it will be available very soon (by the end of May). A data description paper is also in preparation.
 
 Author: Stella Bourdin (Uni. Oxford), with help from Leo Saffin and Kevin Hodges (Uni. Reading), and Yushan Han (UCDavis), and advice from many members of the [Huracán project](https://research.reading.ac.uk/huracan/about-huracan/project-overview/).
 
@@ -6,12 +9,7 @@ This code and data are distributed under the GPL-3.0 license. This does not cove
 
 A paper is being written to be submitted to ESSD describing the construction process of the present database.
 
-## About Git LFS
-Due to the size of the files in this repository, we use git Large File Storage (LFS) to store the input and output files. 
-To retrieve these files from this repository, you will need to install [git LFS](https://git-lfs.com/).
-Then, once you cloned the repository, run `git lfs pull` to download all the files (it will take time). 
-
-## Repository description
+## Repository description (outdated)
 * `ibtracs/` contains csv files of IBTrACS data for each basin;
 * `input/` contains pickle files of track data for each source;
 * `extended-ibtracs/` contains NetCDF files of the extended-ibtracs data for each basin;
