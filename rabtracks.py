@@ -142,12 +142,15 @@ labels_colors = {
     'DSE':'lightblue',
     'DST':'khaki',
     'EX': 'dodgerblue', #ETC
+    'HAL': "violet", # High‐altitude Low
     'HATHL': "darkviolet",#High altitude thermal low
     'SC': 'lightseagreen', # STC
     'SS(STLC)': "limegreen", # Subtropical Storm (Subtropical Tropical‐Like Cyclone)
-    'TC':'red', # Tropical Cyclone
-    'TD':'orange', # Tropical Depression
-    'TLO':'gold' # Tropical Low
+    'PL(PTLC)': "turquoise", # Polar Low (Polar Tropical‐Like Cyclone)
+    'HTC':'yellowgreen', # Hybrid TC
+    'TC':'orange', # Tropical Cyclone
+    'TD':'gold', # Tropical Depression
+    'TLO':'lemonchiffon' # Tropical Low
 }
 labels_hatches = {
     # IBTrACS labels
@@ -159,9 +162,12 @@ labels_hatches = {
     'DSE':'x',
     'DST':'x',
     'EX': '.', #ETC
-    'HATHL': "+",#High altitude thermal low
-    'SC': '/.', # STC
+    'HAL': "+", # High‐altitude Low
+    'HATHL': "++",#High altitude thermal low
+    'SC': '/..', # STC
     'SS(STLC)': "/.", # Subtropical Storm (Subtropical Tropical‐Like Cyclone)
+    'PL(PTLC)': "//..", # Polar Low (Polar Tropical‐Like Cyclone)
+    'HTC':"//.", # Hybrid TCs
     'TC':'///', # Tropical Cyclone
     'TD':'//', # Tropical Depression
     'TLO':'/' # Tropical Low
