@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-# Zip inputs into public folder
-zip public/input.zip ibtracs/*.xz RA_tracks/*.xz
-
-# Zip RABTracks into public folder
-zip public/rabtracks.zip RABTracks/*.xz
