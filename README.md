@@ -1,8 +1,5 @@
 # RABTracks
 
-> [!WARNING]
-> **WORK IN PROGRESS:** This repository is under active development. Data and instructions to download it will be available very soon (by the end of May). A data description paper is also in preparation.
-
 Author: Stella Bourdin (Formerly Uni. Oxford, now LMD-IPSL, Ecole Polytechnique), with help from Leo Saffin and Kevin Hodges (Uni. Reading), and Yushan Han (UCDavis), and advice from many members of the [Huracán project](https://research.reading.ac.uk/huracan/about-huracan/project-overview/).
 
 This code and data are distributed under the GPL-3.0 license. This does not cover the IBTrACs data, whose license is not indicated on the website. 
