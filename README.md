@@ -4,7 +4,7 @@ Author: Stella Bourdin (Formerly Uni. Oxford, now LMD-IPSL, Ecole Polytechnique)
 
 This code and data are distributed under the GPL-3.0 license. This does not cover the IBTrACs data, whose license is not indicated on the website. 
 
-A paper is being written to be submitted to ESSD describing the construction process of the present database.
+A paper is being written to be submitted to ESSD describing the construction process of the present database. Pre-print is available on [HAL](https://hal.science/hal-05687753v1).
 
 ## Obtaining the RABTracks dataset
 
