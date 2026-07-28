@@ -1,4 +1,7 @@
 CHANGELOG
 
 24/07/2026
-- Updated SyCLoPS data and re-ran the database construction. 
+* Updated SyCLoPS data and re-ran the database construction. 
+(1) To ensure consistency, SyCLoPS tracks for all reanalyses are stitched by prioritizing MSLPCC55 instead of MSLP and require having at least three 6-hourly nodes with an MSLPCC55 > 100 hPa.
+(2) Consistent with the updates in v1.2 of SyCLoPS, the slightly modified low-pressure system (LPS) classification workflow removes the High-Altitude LPS branch and simplifies the Dry LPS Branch. See the SyCLoPS GitHub page for more details.
+(3) SyCLoPS's ERA5 dataset is updated to 2025
