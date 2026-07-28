@@ -80,4 +80,6 @@ Decompress the zip file into your RABTracks folder, and decompress all the compr
 ```
 
 ## References
-* SyCLoPS: [Han & Ullrich, JGR: The System for Classification of Low-Pressure Systems (SyCLoPS): An All-In-One Objective Framework for Large-Scale Data Sets](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024JD041287)
+SyCLoPS:
+- Paper [Han & Ullrich, JGR: The System for Classification of Low-Pressure Systems (SyCLoPS): An All-In-One Objective Framework for Large-Scale Data Sets](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024JD041287)
+- [GitHub](https://github.com/yepkids/SyCLoPS)
