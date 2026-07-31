@@ -4,7 +4,7 @@ Author: Stella Bourdin (Formerly Uni. Oxford, now LMD-IPSL, Ecole Polytechnique)
 
 This code and data are distributed under the GPL-3.0 license. This does not cover the IBTrACs data, whose license is not indicated on the website. 
 
-A paper describing the construction of this dataset has been submitted to Earth System Scientific Data (ESSD), with an available (preprint)[https://essd.copernicus.org/preprints/essd-2026-403/] and (interactive discussion)[https://essd.copernicus.org/preprints/essd-2026-403/#discussion].
+A paper describing the construction of this dataset has been submitted to Earth System Scientific Data (ESSD), with an available [preprint](https://essd.copernicus.org/preprints/essd-2026-403/) and [interactive discussion](https://essd.copernicus.org/preprints/essd-2026-403/#discussion).
 
 ## Obtaining the RABTracks dataset
 
